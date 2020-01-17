@@ -1,149 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
-        <title>尚洪网络工作室</title>
-    <style>
-@charset "utf-8";
-/* CSS Document */
-html,body,ul,li,p,input,form,h1,h2,h3,h4,h5,h6,dl,dt,dd{margin:0;padding:0;border: 0 none;}
-html,body{height:100%}
-h1,h2,h3,h4,h5,h6{font-weight: normal;}
-html,body{-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
-body{margin:0 auto; font-size:12px;font-family:"尚洪网络";/*background-color: #E9EBF5;*/}
-img{/*vertical-align: top;*/ margin:0;padding:0;}
-li, ul, dd, dt, dl{ list-style:none;vertical-align:top;}
-a{text-decoration:none;}
-a img { border: 0 none;}
-
-.appbox{ width:100%; height:100%;display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column;}
-.applogo{ width:auto; height:auto;vertical-align:middle;display:table-cell;top:50%;*position:absolute;*float:left;}
-.applogo img{top:-30%;position:relative;}
-/*.apptit{ width:100%; padding-left:32px; height:62px; line-height:62px; background-color:#058cff; font-size:26px; color:#fff;}*/
-.appv:after{content: ""; display: block;padding-top: 56.25%;}
-.appv{position:relative;}
-/*.is-mobile .wrap{position: fixed;width: 100%;padding-top: 56.25%;top: 0;height: 0;} */
-.player-box{position: absolute; width: 100%;height:100%;left: 0;top: 0;}
-.appvideo{ margin-bottom: 20px; background-color: #fff; padding: 20px 10px 0}
-/*.appvideo p{ font-size:13px; line-height:2;}*/
-.appvideo>p{padding: 10px 0; color: #78909c; font-size: 12px;}
-.apptitle{font-size:16px;}
-.videomore ul{height:160px; margin:20px 0 0 32px;}
-.videomore ul li{width:180px; float:left; margin-right:18px;}
-.videomore ul li a{ color:#e4e4e4; font-size:18px;}
-.videomore ul li a:hover{ color:#51afff;}
-.videomore ul li img{ width:180px; height:100px; margin-bottom:10px;}
-.appml{ margin-left:32px;}
-.date{ color:#818080; font-size:14px; font-family: Tahoma, Arial;}
-.footer{font-size:12px; font-family: Arial, Tahoma,"微软雅黑"; color:#90a4ae; text-align:center; padding:10px 0 20px;line-height: 20px}
-.appad{ width:640px; height:58px; background-color:#242424; z-index:999; position:relative;}
-.download{ width:93px; height:34px; position:absolute; right:76px; top:12px;}
-.close{width:25px; height:25px; position:absolute; top:16px; right:30px; cursor:pointer;}
-.close img:hover,.download img:hover{opacity:0.6;}
-/*.textmax {display: inline-block; max-width: 100%; overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align:middle;}*/
-.video-message{padding:20px 10px 0}
-.is-mobile .video-edit {-webkit-box-flex:1;-ms-flex:1;-webkit-flex:1;flex:1;overflow-y:scroll}
-.v-top{margin-bottom: 5px;height: 35px;vertical-align: middle;max-width: 100%;}
-.v-top div{display: inline-block}
-.v-top>img{text-align: center;}
-.v-simple{box-shadow: 0 1px 1px -1px #888; padding-bottom: 10px}
-.v-simple>p{color:#546e7a;}
-.v-title{font-size: 11px;color: #78909c; padding: 0 10px;}
-.v-top h1{color: #000;font-size: 15px;text-overflow:ellipsis; overflow: hidden; white-space: nowrap;max-width: 16rem;}
-.v-produce{margin-bottom: 20px; padding: 20px 10px 0; background: #fff;}
-.v-produce .content{ line-height: 1.5; overflow: hidden; word-break: break-all;padding-bottom: 15px; color: #455a64;}
-.v-produce .v-panel{margin-bottom: 20px; border-left: 4px solid #90a4ae; color: #263238; font-size: 16px; text-indent: 10px;}
-.appbox .plug-table img {max-width: 100%;}
-.is-mobile .btn-bottom-view {position:relative;-webkit-box-ordinal-group:1;-ms-flex-order:1;-webkit-order:1;order:1;}
-</style>
-    <link rel="stylesheet" href="/assets/css/wechat-share.css" />
-    <title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-<div class="appbox" id="preview-area">
-    <!-- <h2 class="apptit textmax" title="尚洪～工作室微信:13420200987">尚洪～工作室微信:13420200987</h2> -->
-<div class="appv" >
-  <div class="wrap">
-    <div class="player-box" id="previewPlay"></div>
-  </div>
-</div>
-<div class="video-message">
-  <div class="v-top">
-    <img id="videoWater" src="/assets/images/logo_live.png" alt=""/>
-    <span class="pre-like"><i class="like-icon like-empty"></i></span>
-    <div class="v-title">
-        <h1>尚洪网络工作室</h1>
-    <div></div>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="icon" href="data:;base64,=">
+	    <link rel="stylesheet" href="http://abco.oss-accelerate.aliyuncs.com/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/font-awesome.min.css">
+	<link rel="stylesheet" href="http://abco.oss-accelerate.aliyuncs.com/bootstrap-theme.css">
+	<link rel="stylesheet" href="http://abco.oss-accelerate.aliyuncs.com/sweetalert.css">
+	<script>
+	var COOKIE_PRE = '5F25_';var _CHARSET = 'utf-8';var SITEURL = 'http://xxx.abco.wang/shop';var SHOP_SITE_URL = 'http://xxx.abco.wang/shop';var RESOURCE_SITE_URL = 'http://xxx.abco.wang/data/resource';var RESOURCE_SITE_URL = 'http://xxx.abco.wang/data/resource';var SHOP_TEMPLATES_URL = 'http://xxx.abco.wang/shop/templates/default';
+	</script>
+		<script src="http://abco.oss-accelerate.aliyuncs.com/jquery.js"></script>
+	<script src="http://abco.oss-accelerate.aliyuncs.com/jquery.ui.js"></script>
+	<script src="http://abco.oss-accelerate.aliyuncs.com/common.js"></script>
+	<script src="http://abco.oss-accelerate.aliyuncs.com/jquery.validation.min.js"></script>
+	<script src="http://abco.oss-accelerate.aliyuncs.com/jquery.masonry.js"></script>
+	<script src="http://xxx.abco.wang/data/resource/js/dialog/dialog.js" id="dialog_js" charset="utf-8"></script>
+	<script type="text/javascript" src="http://abco.oss-accelerate.aliyuncs.com/jquery.lazyload.js"></script>
+</head>
+<body>
+	  	<script type="text/javascript" color="255,0,0" opacity="0.5" count="99" src="http://abco.oss-accelerate.aliyuncs.com/canvas-nest.min.js"></script>
+	<canvas id="c_n9" width="1363" height="781" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
+    <script type="text/javascript" alpha="0.2" src="http://abco.oss-accelerate.aliyuncs.com/ribbon.min.js"></script>
+	<div class="page-top">
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>国际二期 便捷开门服务</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=99&do=lock&m=feng_community&t=1512611674">
+<img border="5" src="http://webcdn.hoolai.com/group1/M00/00/7A/CgIJK14hwLmAUxekAAA6zD4hx-I362.gif" alt="尚洪网络工作室" width="160px" height="30px"></a></p>
+        
+       </ul> <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=100&do=lock&m=feng_community&t=1512611728">
+<img border="5" src="http://webcdn.hoolai.com/group1/M00/00/7A/CgIJK14hw92AZmbNAABLNJqxtws499.gif" alt="尚洪网络工作室" width="160px" height="30px"></a></p>
+       
+       <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=101&do=lock&m=feng_community&t=1510193675">
+<img border="5" src="http://webcdn.hoolai.com/group1/M00/00/79/CgIJKl4hwMaAP0WRAABMyqrT1YI514.gif" alt="尚洪网络工作室" width="160px" height="30px"></a></p>
+        
+         <div data-role="collapsible">
+       <h3>——点击查看公告，学习使用说明——</h3>
+        <p>温馨提示！本人只提供便捷开门服务，所有权限得德泰业务开通才能使用，如果你已开通扫码开门服务权限，就可以使用了，此链接必须在微信内打开才能使用，制作人《尚洪网络工作室》微信:13420200987</p>
+      </div>
+               <marquee>温馨提示！本人只提供便捷开门服务，所有权限得德泰业务开通才能使用，如果你已开通扫码开门服务权限，就可以使用了，此链接必须在微信内打开才能使用，制作人《尚洪网络工作室》微信:13420200987</marquee>       
+      
+     <video id="video" 
+         controls="true" 
+         preload="auto" 
+         autoplay="autoplay" 
+         width="100%;"
+         x5-video-player-type="h5"
+         x5-video-player-fullscreen="true"
+         x5-video-orientation="landscape|portrait" 
+         poster="http://cdn2.ziti4.com//qrcode/uploaded/77/7f/928084fa7b765b7cec470bc05ead.jpg"
+         style="object-fit:contain;max-height:95vh;">
+        <source src="http://cdn2.ziti4.com//qrcode/uploaded/d2/0b/f0e456fb7de1a2a191eedfa02f47.mp4" />          您的浏览器不支持 video 标签。
+      </video>
+      <div id="output"></div>
+    
+       <input type="button" value="＜＜  点  击  刷  新  网  络  ＞＞ " onclick="javascript:location.href=''" /> 
+      
+        
+        <ul>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=97&do=lock&m=feng_community&t=1509517573">1号楼大门口</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=80&do=lock&m=feng_community&t=1509517661">1号楼地下室</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=98&do=lock&m=feng_community&t=1512612057">2号楼大门口</a></li>  
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=81&do=lock&m=feng_community&t=1509517704">2号楼地下室</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=98&do=lock&m=feng_community&t=1509517683">3号楼大门口</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=82&do=lock&m=feng_community&t=1509517747">3号楼地下室</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=77&do=lock&m=feng_community&t=1509517766">5号楼大门口</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=83&do=lock&m=feng_community&t=1509517790">5号楼地下室</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=78&do=lock&m=feng_community&t=1509517824">6号楼大门口</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=84&do=lock&m=feng_community&t=1509517838">6号楼地下室</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=79&do=lock&m=feng_community&t=1509517854">7号楼大门口</a></li>
+        <li><a href="https://www.detaiwuye.com/app/index.php?i=1&c=entry&id=96&do=lock&m=feng_community&t=1509517865">7号楼地下室</a></li>
+     
+       </div>
+     
+      <div data-role="footer">
+    <h1>尚洪网络技术支持©微信:13420200987</h1>
+     
+         </ul>
     </div>
   </div>
-  <div class="account-preview">
-      <span>98522 次浏览</span>
-      <span  class="base-likes">3258 喜欢</span>
-  </div>
-</div>
-<div class="video-edit">
-  <div class="appvideo">
-  <div class="v-simple plug-table">
-    <p>本人、24小时专业办理以下业务、专业GPS定位找人各种第三方软件专卖各种网红业务办理各种品牌手机专卖各种小视频制作各类广告配音录制图片处理等业务…………</p>
-  </div>
-</div>
-<div class="wechat-share-desc">
-    <ul class="share-content plug-table">
-    </ul>
-</div>
-</div>
-</div>
-<script src='https://player.polyv.net/script/polyvplayer.min.js'></script>
-<script>
-var autoPlay = "1";
-var previewStart = -1;
-var previewVid = "e5d1c94d498c412ae379d38acb656284_e";
-var vid = "e5d1c94d498c412ae379d38acb656284_e";
-var previewEnd = -1;
-var previewDf="";
-var closeview = "0";
-var h5player = "";
-var playsafe = "184b16d0-accf-462c-b157-4c8dba1d5150-tfevwsfxcsbcocx";
-var baseLikes = "4";
-var pageModel = 'view';
 
-function isMobile() {
-  if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)))
-    return true;
-  else
-    return false;
-}
-if(isMobile()) {
-  var el = document.querySelector(".appbox");
-  el.setAttribute("class", el.getAttribute("class") + " is-mobile");
-}
-
-window.onload=function(){
-	var water = document.getElementById("videoWater");
-	var logo = "";
-  var logoimage = "";
-  if (logoimage == '') {
-    if (logo == '') {
-      water.src = "/assets/images/logo_live.png";
-    } else {
-      water.src = logo;
-    }
-  }
-}
-
-var player = polyvObject('#previewPlay').videoPlayer({
-	'vid' : "e5d1c94d498c412ae379d38acb656284_e",
-	'width':"100%",
-	'height':"100%",
-	'playsafe': "184b16d0-accf-462c-b157-4c8dba1d5150-tfevwsfxcsbcocx",
-	'start': previewStart,
-	'end': previewEnd,
-	"flashvars": {"autoplay": autoPlay,"df":previewDf, "p":"1", "playsafe": "184b16d0-accf-462c-b157-4c8dba1d5150-tfevwsfxcsbcocx"}
-});
-</script>
-<script src="/assets/js/libs/jquery/jquery-1.11.1.min.js"></script>
-<script src="/assets/js/controller/secure/video/wechatPage/editPreview.js"></script>
-</body>
-</html>
-
+ 
+ 
